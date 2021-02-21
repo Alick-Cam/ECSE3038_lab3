@@ -1,10 +1,17 @@
-from flask import Flask, request, jsonify, json
+from flask import Flask, request, jsonify, json, redirect, url_for
 from flask_pymongo import PyMongo
 from marshmallow import Schema, fields, ValidationError
 from bson.json_util import dumps
 from json import loads
 
+from flask_cors import CORS #for testing 
+
+#adding time stuff
+from pytz import datetime
+import pytz
+
 app = Flask(__name__)
+CORS(app) #for testing
 
 app.config["MONGO_URI"] = "mongodb+srv://alickcam:alickcam@cluster0.cqwbq.mongodb.net/alickcamDB?retryWrites=true&w=majority"
 mongo = PyMongo(app)
