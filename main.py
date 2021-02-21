@@ -13,7 +13,7 @@ import pytz
 app = Flask(__name__)
 CORS(app) #for testing
 
-app.config["MONGO_URI"] = "mongodb+srv://alickcam:alickcam@cluster0.cqwbq.mongodb.net/alickcamDB?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = ""
 mongo = PyMongo(app)
 
 #global dictionary to store information about a single user 
